@@ -1,6 +1,6 @@
 # basic-typescript
 
-# to run program use below
+- To run program use below
 
 ```
 tsc-node <filename>
