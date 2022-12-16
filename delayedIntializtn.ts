@@ -5,7 +5,7 @@ let isval = false;
 
 for (let i in frut) {
   if (frut[i] === "mango") {
-    isval = false;
+    isval = true;
   }
 }
 

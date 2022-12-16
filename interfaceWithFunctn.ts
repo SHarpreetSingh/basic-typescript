@@ -1,5 +1,5 @@
 //
-interface Vehicle {
+interface Vehicl {
   summary():string
 }
 
@@ -13,7 +13,7 @@ const vehObjt = {
   }
 };
 
-const Printvehicl = (vehObjt: Vehicle):void => {
+const Printvehicl = (vehObjt: Vehicl):void => {
   //
   console.log(`Summary ${vehObjt.summary()}`)
 };
