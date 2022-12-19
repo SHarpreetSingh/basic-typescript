@@ -14,25 +14,25 @@ export class CustomeMap {
     });
   }
 
-  addUserMarker(user: User): void {
+  addUserMarker(mappable: User| Company): void {
     console.log("user",user);
     
     new google.maps.Marker({
       map: this.googleMap,
       position: {
-        lat: user.location.lat,
-        lng: user.location.lng,
+        lat: mappable.location.lat,
+        lng: mappable.location.lng,
       },
     });
   }
 
-  addCompanyMarker(company: Company): void {
+  addCompanyMarker(mappable: User| Company): void {
 
     new google.maps.Marker({
         map: this.googleMap,
         position: {
-          lat: company.location.lat,
-          lng: company.location.lng,
+          lat: mappable.location.lat,
+          lng: mappable.location.lng,
         },
       });
 
