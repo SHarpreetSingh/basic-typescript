@@ -1,6 +1,14 @@
 import { User } from "./User";
 import { Company } from "./Company";
 
+interface Mappable {
+  location: {
+    lat: number;
+    lng: number;
+  };
+  markerContent(): string;
+}
+
 export class CustomeMap {
   private googleMap: google.maps.Map;
 
@@ -14,27 +22,23 @@ export class CustomeMap {
     });
   }
 
-  addUserMarker(mappable: User| Company): void {
-    console.log("user",user);
-    
-    new google.maps.Marker({
+  addMarker(mappable: Mappable): void {
+    console.log("user", mappable);
+
+    const marker = new google.maps.Marker({
       map: this.googleMap,
       position: {
         lat: mappable.location.lat,
         lng: mappable.location.lng,
       },
     });
-  }
 
-  addCompanyMarker(mappable: User| Company): void {
-
-    new google.maps.Marker({
-        map: this.googleMap,
-        position: {
-          lat: mappable.location.lat,
-          lng: mappable.location.lng,
-        },
+    marker.addListener("click", () => {
+      const infoWindow = new google.maps.InfoWindow({
+        content: mappable.markerContent(),
       });
 
+      infoWindow.open(this.googleMap, marker);
+    });
   }
 }
