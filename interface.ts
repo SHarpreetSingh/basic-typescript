@@ -15,7 +15,10 @@ axios.get(url).then((r) => {
   dd(id, title);
 });
 
-function dd(id:number, title:string) {
+function dd(id: number, title: string) {
   console.log(id, "==", title);
 }
 // return result.data;
+
+
+

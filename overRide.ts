@@ -11,3 +11,7 @@ class stringClas extends printerClass{
         console.log("proint from parent clas");
     }
 }
+
+const interClass = new printerClass();
+
+interClass.doIt()

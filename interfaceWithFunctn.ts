@@ -18,4 +18,4 @@ const Printvehicl = (vehObjt: Vehicl):void => {
   console.log(`Summary ${vehObjt.summary()}`)
 };
 
-Printvehicle(vehObjt);
+Printvehicl(vehObjt);
