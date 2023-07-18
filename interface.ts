@@ -19,6 +19,3 @@ function dd(id: number, title: string) {
   console.log(id, "==", title);
 }
 // return result.data;
-
-
-
